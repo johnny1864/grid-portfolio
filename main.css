@@ -1,47 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 2vw;
+    padding: 0;
+    margin: 0;
+}
+
+/************************
+ MOBILE FIRST GRID LAYOUT
+*************************/
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "portfolio-nav"
+        "portfolio-item"
+        "site-nav";
+    grid-gap: 1em;
+}
+
+h1 {
+    grid-area: header;
+    justify-self: center;
+}
+
+#portfolio-nav {
+    grid-area: portfolio-nav;
+    align-self: center;
+}
+
+#portfolio-item {
+    grid-area: portfolio-item;
+}
+
+#site-nav {
+    grid-area: site-nav;
+}
+
+/*VIEW FOR DESKTOP*/
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 3fr 0.1fr;
+        grid-template-areas:
+            "header header"
+            "portfolio-nav portfolio-item"
+            "portfolio-nav site-nav";
+        grid-gap: 1em;
+    }
+    
+    body{
+        font-size: 1vw
+    }
+    
+    h1{
+        justify-self: right;
+    }
+}
 
 /*******************
     GENERAL STYLING
 ********************/
 
-body{
-    font-family: Arial, sans-serif;
-    font-size: 1vw;
-    padding: 0;
-    margin: 0;
-}
 
-img{
+
+img {
     max-width: 100%;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
 }
 
-h1{
+h1 {
     font-size: 4em;
     font-weight: normal;
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
 
-li{
+li {
     list-style-type: none;
     text-align: center;
 }
 
 
-#site-nav li{
+#site-nav li {
     display: inline-block;
     padding-right: 1em;
 }
 
-#portfolio-nav li{
+#portfolio-nav li {
     line-height: 1.8em;
 }
 
@@ -50,37 +105,5 @@ li{
     text-align: right;
 }
 
-
-/********************
-        GRID LAYOUT
-********************/
-
-main{
-    display: grid;
-    grid-template-columns: 1fr 3fr 0.1fr;
-    grid-template-areas: 
-        "header header"
-        "portfolio-nav portfolio-item"
-        "portfolio-nav site-nav";
-    grid-gap: 1em;
-}
-
-h1{
-    grid-area: header;
-    justify-self: right;
-}
-
-#portfolio-nav{
-    grid-area: portfolio-nav;
-    align-self: center;
-}
-
-#portfolio-item{
-    grid-area: portfolio-item;
-}
-
-#site-nav{
-    grid-area: site-nav;
-}
 
 

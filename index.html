@@ -13,16 +13,16 @@
 
         <nav id="portfolio-nav">
             <ul>
-                <li><a href="portfolio-landscape.html">LANDSCAPE</a></li>
-                <li><a href="portfolio-portraiture.html">PORTRAITURE</a></li>
-                <li><a href="portfolio-studio.html">STUDIO</a></li>
-                <li><a href="portfolio-commercial.html">COMMERCIAL</a></li>
+                <li><a href="#">LANDSCAPE</a></li>
+                <li><a href="#">PORTRAITURE</a></li>
+                <li><a href="#">STUDIO</a></li>
+                <li><a href="#">COMMERCIAL</a></li>
             </ul>
         </nav>
 
         <div id="portfolio-item">
-            <img src="images/p1.jpg">
-            <div id="copyright">©Yours Truly 2018</div>
+            <img id='image' src="images/p1.jpg">
+            <div id="copyright">&copy; Author</div>
         </div>
 
         <nav id="site-nav">
@@ -34,6 +34,26 @@
             </ul>
         </nav>
     </main>
+    
+    <script>
+        window.onload = function(){
+            const links = document.querySelectorAll('#portfolio-nav a');
+            let img = document.querySelector('#image');
+            
+            //ADDS EVENT LISTENER TO PORTFOLIO NAV LINKS
+            for(let i = 0; i< links.length; i++){
+                links[i].addEventListener('click', function(e){
+                    changeImg(e, i+1);
+                });
+            }
+            
+            //CHANGES PORTFOLIO IMAGE
+            function changeImg(e, index) {
+                e.preventDefault();
+                img.src = `images/p${index}.jpg`
+            }
+        }
+    </script>
 </body>
 
 </html>
